@@ -35,4 +35,5 @@ public class OrderTrackCommandHandler {
                     trackOrderQuery.getOrderTrackingId());
         }
         return orderDataMapper.orderToTrackOrderResponse(orderResult.get());
+    }
 }
