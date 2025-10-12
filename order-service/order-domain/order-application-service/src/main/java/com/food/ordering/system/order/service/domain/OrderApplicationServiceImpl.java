@@ -21,6 +21,11 @@ class OrderApplicationServiceImpl implements OrderApplicationService {
         this.orderCreateCommandHandler = orderCreateCommandHandler;
         this.orderTrackCommandHandler = orderTrackCommandHandler;
     }
+    /*
+    * application‑service «выступает посредником между изолированной доменной моделью и внешним миром;
+    * он отвечает за управление транзакциями, поиск агрегатов, вызов методов и сохранение изменений,
+    * но не содержит бизнес‑логики»
+    */
 
     @Override
     public CreateOrderResponse createOrder(CreateOrderCommand createOrderCommand) {

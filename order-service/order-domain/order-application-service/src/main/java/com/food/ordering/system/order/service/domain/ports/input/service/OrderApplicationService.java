@@ -6,7 +6,7 @@ import com.food.ordering.system.order.service.domain.dto.track.TrackOrderQuery;
 import com.food.ordering.system.order.service.domain.dto.track.TrackOrderResponse;
 
 import javax.validation.Valid;
-
+/*Это application‑layer для bounded context «Order»*/
 public interface OrderApplicationService {
 
     CreateOrderResponse createOrder(@Valid CreateOrderCommand createOrderCommand);

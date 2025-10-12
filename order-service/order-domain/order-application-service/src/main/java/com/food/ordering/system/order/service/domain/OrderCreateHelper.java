@@ -41,7 +41,11 @@ public class OrderCreateHelper {
         this.orderRepository = orderRepository;
         this.restaurantRepository = restaurantRepository;
     }
-
+/*
+доменный сервис «отвечает за принятие бизнес‑решений, тогда как application‑service лишь оркестрирует вызовы»
+Поэтому искать клиента и ресторан в базе данных и проверять, существует ли запись, –
+обязанность application‑service/command‑handler, а не доменного сервиса
+*/
     @Transactional
     public OrderCreatedEvent persistOrder(CreateOrderCommand createOrderCommand){
         checkCustomer(createOrderCommand.getCustomerId());

@@ -25,7 +25,10 @@ public class OrderDomainServiceImpl implements OrderDomainService {
 
     @Override
     public OrderCreatedEvent validateAndInitiateOrder(Order order, Restaurant restaurant) {
-
+/*
+        всё, что относится к инвариантам одного агрегата (Order), должно быть внутри него, а логика,
+        использующая несколько агрегатов (Order + Restaurant), передаётся в доменный сервис (т.е. сюда)
+*/
         validateRestaurant(restaurant);
         setOrderProductInformation(order, restaurant);
         order.validateOrder();
