@@ -3,8 +3,6 @@ package com.food.ordering.system.order.service.dataaccess.order.entity;
 import lombok.*;
 
 import javax.persistence.*;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.NotNull;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -17,7 +15,7 @@ import java.util.UUID;
 @Entity
 public class OrderAddressEntity {
     @Id
-    private UUID Id;
+    private UUID id;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ORDER_ID")
     private OrderEntity order;
@@ -30,11 +28,11 @@ public class OrderAddressEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         OrderAddressEntity that = (OrderAddressEntity) o;
-        return Objects.equals(Id, that.Id);
+        return Objects.equals(id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(Id);
+        return Objects.hash(id);
     }
 }
